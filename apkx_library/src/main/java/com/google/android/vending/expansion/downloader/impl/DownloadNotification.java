@@ -21,6 +21,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.os.Build;
 import android.os.Messenger;
+import android.support.annotation.StringRes;
 import android.support.v4.app.NotificationCompat;
 import com.android.vending.expansion.downloader.R;
 import com.google.android.vending.expansion.downloader.DownloadProgressInfo;
@@ -84,7 +85,7 @@ public class DownloadNotification implements IDownloaderClient {
             if (newState == IDownloaderClient.STATE_IDLE || null == mContentIntent) {
                 return;
             }
-            int stringDownloadID;
+            @StringRes int stringDownloadID;
             int iconResource;
             boolean ongoingEvent;
 
