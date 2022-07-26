@@ -928,7 +928,7 @@ public class DownloaderService extends CustomIntentService implements IDownloade
         intent.putExtras(callerExtras);
 
         mAlarmIntent = PendingIntent.getBroadcast(this, 0, intent,
-                PendingIntent.FLAG_CANCEL_CURRENT);
+                CompatUtils.fixPendingIntentFlags(PendingIntent.FLAG_CANCEL_CURRENT));
 
         if (repeated) {
             alarms.setRepeating(AlarmManager.RTC_WAKEUP,
